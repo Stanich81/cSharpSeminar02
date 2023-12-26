@@ -18,31 +18,61 @@
 // причём X ≠ 0 и Y ≠ 0 и выдаёт номер координатной четверти плоскости,
 // в которой находится эта точка.
 
+// Console.Clear();
+// Console.WriteLine("Введите координату Х (x≠0) : ");
+// int x = Convert.ToInt32(Console.ReadLine()!);
+// Console.WriteLine("Введите координату Y (y≠0) : ");
+// int y = Convert.ToInt32(Console.ReadLine()!);
+// if (x == 0 || y == 0)
+// {
+//     Console.WriteLine("X и Y  не должны равняться нулю!");
+// }
+// else 
+// {
+//     if (x > 0 && y > 0)
+//     {
+//         Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 1");
+//     }
+//     if (x < 0 && y > 0)
+//     {
+//         Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 2");
+//     }
+//     if (x < 0 && y < 0)
+//     {
+//         Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 3");
+//     }
+//     if (x > 0 && y < 0)
+//     {
+//         Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 4");
+//     }
+// }
+
+
+// Задача 3: Напишите программу, которая принимает на вход целое число из отрезка [10, 99] и показывает
+// наибольшую цифру числа.
+
 Console.Clear();
-Console.WriteLine("Введите координату Х (x≠0) : ");
-int x = Convert.ToInt32(Console.ReadLine()!);
-Console.WriteLine("Введите координату Y (y≠0) : ");
-int y = Convert.ToInt32(Console.ReadLine()!);
-if (x == 0 || y == 0)
+Console.WriteLine("Введите координату число от 10 до 99 : ");
+int n = Convert.ToInt32(Console.ReadLine()!);
+int n1, n2;
+if (n < 10 || n > 99)
 {
-    Console.WriteLine("X и Y  не должны равняться нулю!");
+    Console.WriteLine("Введенное значение не входит в указанный диапазон {10 до 99}. Повторите попытку");
 }
-else 
+else
 {
-    if (x > 0 && y > 0)
+    n1 = n / 10;
+    n2 = n % 10;
+    if (n1 > n2)
     {
-        Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 1");
+        Console.WriteLine($"{n1} это наибольшая цифра числа {n}");
     }
-    if (x < 0 && y > 0)
+    else if (n1 < n2)
     {
-        Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 2");
+        Console.WriteLine($"{n2} это наибольшая цифра числа {n}");
     }
-    if (x < 0 && y < 0)
+    else
     {
-        Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 3");
-    }
-    if (x > 0 && y < 0)
-    {
-        Console.WriteLine($"Точка с координатами x = {x}, y = {y} лежит в плоскости номер 4");
+        Console.WriteLine($"Обе цифры числа {n} равны друг другу");
     }
 }
